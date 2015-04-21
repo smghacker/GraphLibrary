@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1429542191 source:d:\programming\graphconverterterproject\graphadjmat.cpp
+	"GraphAdjMat.h"
+
+1425211153 source:d:\programming\graphconverterterproject\graphadjlist.cpp
+	"GraphAdjList.h"
+
+1429542219 source:d:\programming\graphconverterterproject\main.cpp
+	<iostream>
+	"GraphConverter.h"
+	"GraphBuilder.h"
+
+1425207553 d:\programming\graphconverterterproject\graphadjlist.cpp
+	"GraphAdjList.h"
+
+1429542381 source:d:\programming\graphconverterterproject\graphconverter.cpp
+	"GraphConverter.h"
+
+1425207511 d:\programming\graphconverterterproject\graphedgelist.cpp
+	"GraphEdgeList.h"
+
+1425211381 source:d:\programming\graphconverterterproject\graphedgelist.cpp
+	"GraphEdgeList.h"
+
+1425061887 d:\programming\graphconverterterproject\graphconverter.cpp
+	"GraphEdgeList.cpp"
+	"GraphAdjList.cpp"
+
+1425210893 d:\programming\graphconverterterproject\graphadjlist.h
+	<vector>
+	<iostream>
+
+1426096695 source:d:\programming\graphconverterterproject\graphbuilder.cpp
+	"GraphBuilder.h"
+
+1425211032 d:\programming\graphconverterterproject\graphedgelist.h
+	<vector>
+	<iostream>
+	"Edge.h"
+
+1429535473 d:\programming\graphconverterterproject\edge.h
+
+1429535512 source:d:\programming\graphconverterterproject\edge.cpp
+	"Edge.h"
+
+1426096740 d:\programming\graphconverterterproject\graphbuilder.h
+	"GraphAdjList.h"
+	"GraphEdgeList.h"
+
+1426097051 d:\programming\graphconverterterproject\graphconverter.h
+	"GraphAdjList.h"
+	"GraphEdgeList.h"
+	"GraphAdjMat.h"
+
+1429542178 d:\programming\graphconverterterproject\graphadjmat.h
+	"Matrix.h"
+	<vector>
+	<iostream>
+
+1429542126 d:\programming\graphconverterterproject\matrix.h
+	<vector>
+
+1429542158 source:d:\programming\graphconverterterproject\matrix.cpp
+	"Matrix.h"
+
