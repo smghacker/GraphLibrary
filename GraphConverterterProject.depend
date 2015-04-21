@@ -68,12 +68,15 @@
 
 1429621605 c:\users\sonia\documents\github\graphlibrary\edge.h
 
-1429621605 source:c:\users\sonia\documents\github\graphlibrary\graphadjlist.cpp
+1429624700 source:c:\users\sonia\documents\github\graphlibrary\graphadjlist.cpp
 	"GraphAdjList.h"
+	<cstring>
+	<queue>
 
-1429621605 c:\users\sonia\documents\github\graphlibrary\graphadjlist.h
+1429624052 c:\users\sonia\documents\github\graphlibrary\graphadjlist.h
 	<vector>
 	<iostream>
+	"Tree.h"
 
 1429621605 source:c:\users\sonia\documents\github\graphlibrary\graphadjmat.cpp
 	"GraphAdjMat.h"
@@ -86,7 +89,7 @@
 1429621605 c:\users\sonia\documents\github\graphlibrary\matrix.h
 	<vector>
 
-1429621605 source:c:\users\sonia\documents\github\graphlibrary\graphbuilder.cpp
+1429627340 source:c:\users\sonia\documents\github\graphlibrary\graphbuilder.cpp
 	"GraphBuilder.h"
 
 1429621605 c:\users\sonia\documents\github\graphlibrary\graphbuilder.h
@@ -109,11 +112,20 @@
 1429621605 source:c:\users\sonia\documents\github\graphlibrary\graphedgelist.cpp
 	"GraphEdgeList.h"
 
-1429621605 source:c:\users\sonia\documents\github\graphlibrary\main.cpp
+1429627496 source:c:\users\sonia\documents\github\graphlibrary\main.cpp
 	<iostream>
+	<cstdio>
 	"GraphConverter.h"
 	"GraphBuilder.h"
 
 1429621605 source:c:\users\sonia\documents\github\graphlibrary\matrix.cpp
 	"Matrix.h"
+
+1429624883 c:\users\sonia\documents\github\graphlibrary\tree.h
+	<iostream>
+	<vector>
+
+1429624929 source:c:\users\sonia\documents\github\graphlibrary\tree.cpp
+	"Tree.h"
+	<vector>
 
