@@ -2,6 +2,7 @@
 #define GRAPHADJLIST_H
 #include<vector>
 #include<iostream>
+#include "Tree.h"
 using namespace std;
 
 class GraphAdjList{
@@ -17,5 +18,6 @@ public:
     vector<vector<int> > getGraph()const;
     bool isDirected()const;
     bool isMulti()const;
+    Tree BFSSpanningTree(int vertex);
 };
 #endif // GRAPHADJLIST_H
