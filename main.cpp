@@ -1,13 +1,21 @@
 #include <iostream>
+#include <cstdio>
 #include"GraphConverter.h"
 #include "GraphBuilder.h"
 using namespace std;
 
 int main()
 {
+    //freopen("C:\\Users\\Sonia\\Documents\\GitHub\\GraphLibrary\\graphEdgeList.txt", "r", stdin);
     Matrix a(0);
     GraphConverter gc;
     GraphBuilder graphBuilder;
+
+    GraphAdjList g = graphBuilder.buildGraphAdjList();
+    g.print();
+    Tree t = g.BFSSpanningTree(1);
+    t.print(cout);
+
     ///1 domashno konvertirane
     /*GraphEdgeList ge;
     Edge a1(1,2);
