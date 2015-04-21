@@ -11,7 +11,7 @@ Edge::Edge(int begin, int end, int weight)
 {
     this->begin = begin;
     this->end = end;
-    this.weight = weight;
+    this->weight = weight;
 }
 
 int Edge::getBegin()const
