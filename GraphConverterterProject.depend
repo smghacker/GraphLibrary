@@ -63,3 +63,57 @@
 1429542158 source:d:\programming\graphconverterterproject\matrix.cpp
 	"Matrix.h"
 
+1429622236 source:c:\users\sonia\documents\github\graphlibrary\edge.cpp
+	"Edge.h"
+
+1429621605 c:\users\sonia\documents\github\graphlibrary\edge.h
+
+1429621605 source:c:\users\sonia\documents\github\graphlibrary\graphadjlist.cpp
+	"GraphAdjList.h"
+
+1429621605 c:\users\sonia\documents\github\graphlibrary\graphadjlist.h
+	<vector>
+	<iostream>
+
+1429621605 source:c:\users\sonia\documents\github\graphlibrary\graphadjmat.cpp
+	"GraphAdjMat.h"
+
+1429621605 c:\users\sonia\documents\github\graphlibrary\graphadjmat.h
+	"Matrix.h"
+	<vector>
+	<iostream>
+
+1429621605 c:\users\sonia\documents\github\graphlibrary\matrix.h
+	<vector>
+
+1429621605 source:c:\users\sonia\documents\github\graphlibrary\graphbuilder.cpp
+	"GraphBuilder.h"
+
+1429621605 c:\users\sonia\documents\github\graphlibrary\graphbuilder.h
+	"GraphAdjList.h"
+	"GraphEdgeList.h"
+
+1429621605 c:\users\sonia\documents\github\graphlibrary\graphedgelist.h
+	<vector>
+	<iostream>
+	"Edge.h"
+
+1429621605 source:c:\users\sonia\documents\github\graphlibrary\graphconverter.cpp
+	"GraphConverter.h"
+
+1429621605 c:\users\sonia\documents\github\graphlibrary\graphconverter.h
+	"GraphAdjList.h"
+	"GraphEdgeList.h"
+	"GraphAdjMat.h"
+
+1429621605 source:c:\users\sonia\documents\github\graphlibrary\graphedgelist.cpp
+	"GraphEdgeList.h"
+
+1429621605 source:c:\users\sonia\documents\github\graphlibrary\main.cpp
+	<iostream>
+	"GraphConverter.h"
+	"GraphBuilder.h"
+
+1429621605 source:c:\users\sonia\documents\github\graphlibrary\matrix.cpp
+	"Matrix.h"
+
