@@ -2,19 +2,36 @@
 #include <cstdio>
 #include"GraphConverter.h"
 #include "GraphBuilder.h"
+#include "Maze.h"
 using namespace std;
 
 int main()
 {
-    //freopen("C:\\Users\\Sonia\\Documents\\GitHub\\GraphLibrary\\graphEdgeList.txt", "r", stdin);
-    Matrix a(0);
+    //freopen("C:\\Users\\Samsung-WS\\Desktop\\in.txt", "r", stdin);
+   /* Matrix a(0);
     GraphConverter gc;
     GraphBuilder graphBuilder;
 
     GraphAdjList g = graphBuilder.buildGraphAdjList();
     g.print();
     Tree t = g.BFSSpanningTree(1);
-    t.print(cout);
+    t.print(cout);*/
+
+    /*Maze maze(4,4);
+    maze.read(cin);
+    if(maze.isWay(7,28))
+    {
+        cout << "Yes" << endl;
+    }
+    else
+    {
+        cout << "No" << endl;
+    }*/
+
+
+    /*GridGraphAdjList graph(2,2,0);
+    graph.makeGraph(cin);
+    graph.print();*/
 
     ///1 domashno konvertirane
     /*GraphEdgeList ge;

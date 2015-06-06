@@ -44,8 +44,14 @@
 		<Unit filename="GraphConverter.h" />
 		<Unit filename="GraphEdgeList.cpp" />
 		<Unit filename="GraphEdgeList.h" />
+		<Unit filename="GridGraphAdjList.cpp" />
+		<Unit filename="GridGraphAdjList.h" />
 		<Unit filename="Matrix.cpp" />
 		<Unit filename="Matrix.h" />
+		<Unit filename="Maze.cpp" />
+		<Unit filename="Maze.h" />
+		<Unit filename="Tree.cpp" />
+		<Unit filename="Tree.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
