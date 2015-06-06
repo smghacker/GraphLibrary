@@ -17,7 +17,7 @@ GraphAdjList GraphBuilder::buildGraphAdjList()
     cout << "Type the number of edges and then type the edges " << endl;
     cin >> numOfEdges;
 
-    vector<vector<int> > graph(numOfVertices);
+    vector<vector<int> > graph(numOfVertices+1);
     for(int i = 0; i < numOfEdges; i++)
     {
         int from,to;

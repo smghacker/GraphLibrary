@@ -1,4 +1,6 @@
 #include "GraphAdjList.h"
+#include <cstring>
+#include <queue>
 
 GraphAdjList::GraphAdjList()
 {
@@ -41,4 +43,30 @@ bool GraphAdjList::isDirected()const
 bool GraphAdjList::isMulti()const
 {
     return multi;
+}
+
+Tree GraphAdjList::BFSSpanningTree(int vertex)
+{
+    Tree spanningTree(sz-1);
+    int used[sz];
+    memset(used, 0, sizeof(used));
+    used[vertex] = 1;
+    queue<int> q;
+    q.push(vertex);
+    while(!q.empty())
+    {
+        int current = q.front();
+        q.pop();
+        for(int i = 0; i < graph[current].size(); i++)
+        {
+            int next = graph[current][i];
+            if(!used[next])
+            {
+                q.push(next);
+                used[next] = 1;
+                spanningTree.assignParent(next, current);
+            }
+        }
+    }
+    return spanningTree;
 }

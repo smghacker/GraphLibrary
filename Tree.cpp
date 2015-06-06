@@ -8,6 +8,7 @@ Tree::Tree(int sz)
     treeParentList.resize(sz+1);
     this->sz = sz;
 }
+
 void Tree::build(istream& in)
 {
     for(int i = 1; i <= sz; i++)
@@ -19,6 +20,7 @@ void Tree::build(istream& in)
         }
     }
 }
+
 int Tree::getRoot()
 {
     return this->root;
@@ -28,10 +30,12 @@ void Tree::add(int vertex)
     treeParentList.push_back(vertex);
     sz++;
 }
+
 void Tree::assignParent(int vertex, int parent)
 {
     treeParentList[vertex] = parent;
 }
+
 bool Tree::isLeaf(int vertex)
 {
     for(int i = 1; i <= sz; i++)
@@ -43,6 +47,7 @@ bool Tree::isLeaf(int vertex)
     }
     return true;
 }
+
 bool Tree::deleteIfLeaf(int vertex)
 {
     if(isLeaf(vertex))
@@ -57,6 +62,7 @@ bool Tree::deleteIfLeaf(int vertex)
     }
     return false;
 }
+
 void Tree::slowGetLeaves(ostream& out)
 {
     for(int i = 1; i <= sz; i++)
@@ -68,6 +74,7 @@ void Tree::slowGetLeaves(ostream& out)
     }
     out << endl;
 }
+
 void Tree::getLeaves(ostream& out)
 {
     int vertexes[sz+1];
@@ -89,3 +96,11 @@ void Tree::getLeaves(ostream& out)
     out << endl;
 }
 
+void Tree::print(ostream& out)
+{
+    for(int i = 1; i <= sz; i++)
+    {
+        out << i << " " << treeParentList[i] << endl;
+    }
+    out << endl;
+}

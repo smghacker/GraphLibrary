@@ -7,7 +7,6 @@ using namespace std;
 class Tree{
 private:
     vector<int> treeParentList;
-
     int sz;
     int root;
 public:
@@ -20,6 +19,7 @@ public:
     bool deleteIfLeaf(int vertex);
     void slowGetLeaves(ostream& out);
     void getLeaves(ostream& out);
+    void print(ostream& out);
 };
 
 #endif
