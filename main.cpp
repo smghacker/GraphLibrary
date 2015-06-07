@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    //freopen("C:\\Users\\Samsung-WS\\Desktop\\in.txt", "r", stdin);
+    freopen("C:\\Users\\Samsung-WS\\Desktop\\in.txt", "r", stdin);
    /* Matrix a(0);
     GraphConverter gc;
     GraphBuilder graphBuilder;
@@ -32,6 +32,14 @@ int main()
     /*GridGraphAdjList graph(2,2,0);
     graph.makeGraph(cin);
     graph.print();*/
+
+    /*GraphBuilder graphBuilder;
+    GraphAdjList graph = graphBuilder.buildGraphAdjList();
+    vector<int> vec = graph.findEulerLoop();
+    for(int i = 0; i < vec.size(); i++)
+    {
+        cout << vec[i] << " ";
+    }*/
 
     ///1 domashno konvertirane
     /*GraphEdgeList ge;

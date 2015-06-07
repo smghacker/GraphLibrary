@@ -19,5 +19,10 @@ public:
     bool isDirected()const;
     bool isMulti()const;
     Tree BFSSpanningTree(int vertex);
+    vector<int> parents();
+    bool isConnected();
+    bool isThereEulerLoop();
+    bool isThereEulerPath();
+    vector<int> findEulerLoop();
 };
 #endif // GRAPHADJLIST_H
