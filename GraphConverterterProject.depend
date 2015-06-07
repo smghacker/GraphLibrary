@@ -134,12 +134,13 @@
 
 1429621606 c:\users\samsung-ws\documents\github\graphlibrary\edge.h
 
-1429627794 source:c:\users\samsung-ws\documents\github\graphlibrary\graphadjlist.cpp
+1433666685 source:c:\users\samsung-ws\documents\github\graphlibrary\graphadjlist.cpp
 	"GraphAdjList.h"
 	<cstring>
 	<queue>
+	<stack>
 
-1429624054 c:\users\samsung-ws\documents\github\graphlibrary\graphadjlist.h
+1433666100 c:\users\samsung-ws\documents\github\graphlibrary\graphadjlist.h
 	<vector>
 	<iostream>
 	"Tree.h"
@@ -182,7 +183,7 @@
 1429621606 source:c:\users\samsung-ws\documents\github\graphlibrary\graphedgelist.cpp
 	"GraphEdgeList.h"
 
-1433582312 source:c:\users\samsung-ws\documents\github\graphlibrary\main.cpp
+1433666343 source:c:\users\samsung-ws\documents\github\graphlibrary\main.cpp
 	<iostream>
 	<cstdio>
 	"GraphConverter.h"
@@ -199,11 +200,11 @@
 1433582291 source:c:\users\samsung-ws\documents\github\graphlibrary\gridgraphadjlist.cpp
 	"GridGraphAdjList.h"
 
-1433582375 c:\users\samsung-ws\documents\github\graphlibrary\gridgraphadjlist.h
+1433582399 c:\users\samsung-ws\documents\github\graphlibrary\gridgraphadjlist.h
 	<vector>
 	<iostream>
 
-1433581809 source:c:\users\samsung-ws\documents\github\graphlibrary\maze.cpp
+1433582348 source:c:\users\samsung-ws\documents\github\graphlibrary\maze.cpp
 	"Maze.h"
 	<vector>
 	<queue>
