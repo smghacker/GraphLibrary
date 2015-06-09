@@ -68,12 +68,14 @@
 
 1429621605 c:\users\sonia\documents\github\graphlibrary\edge.h
 
-1429627792 source:c:\users\sonia\documents\github\graphlibrary\graphadjlist.cpp
+1433854127 source:c:\users\sonia\documents\github\graphlibrary\graphadjlist.cpp
 	"GraphAdjList.h"
 	<cstring>
 	<queue>
+	<stack>
+	<algorithm>
 
-1429624052 c:\users\sonia\documents\github\graphlibrary\graphadjlist.h
+1433854105 c:\users\sonia\documents\github\graphlibrary\graphadjlist.h
 	<vector>
 	<iostream>
 	"Tree.h"
@@ -112,11 +114,12 @@
 1429621605 source:c:\users\sonia\documents\github\graphlibrary\graphedgelist.cpp
 	"GraphEdgeList.h"
 
-1429628000 source:c:\users\sonia\documents\github\graphlibrary\main.cpp
+1433848751 source:c:\users\sonia\documents\github\graphlibrary\main.cpp
 	<iostream>
 	<cstdio>
 	"GraphConverter.h"
 	"GraphBuilder.h"
+	"Maze.h"
 
 1429621605 source:c:\users\sonia\documents\github\graphlibrary\matrix.cpp
 	"Matrix.h"
@@ -125,7 +128,7 @@
 	<iostream>
 	<vector>
 
-1429624929 source:c:\users\sonia\documents\github\graphlibrary\tree.cpp
+1433846470 source:c:\users\sonia\documents\github\graphlibrary\tree.cpp
 	"Tree.h"
 	<vector>
 
@@ -210,6 +213,23 @@
 	<queue>
 
 1433581589 c:\users\samsung-ws\documents\github\graphlibrary\maze.h
+	<iostream>
+	<vector>
+	"GridGraphAdjList.h"
+
+1433766979 source:c:\users\sonia\documents\github\graphlibrary\gridgraphadjlist.cpp
+	"GridGraphAdjList.h"
+
+1433841903 c:\users\sonia\documents\github\graphlibrary\gridgraphadjlist.h
+	<vector>
+	<iostream>
+
+1433766979 source:c:\users\sonia\documents\github\graphlibrary\maze.cpp
+	"Maze.h"
+	<vector>
+	<queue>
+
+1433766979 c:\users\sonia\documents\github\graphlibrary\maze.h
 	<iostream>
 	<vector>
 	"GridGraphAdjList.h"
