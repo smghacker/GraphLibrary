@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    freopen("C:\\Users\\Samsung-WS\\Desktop\\in.txt", "r", stdin);
+    freopen("C:\\Users\\Sonia\\Desktop\\in.txt", "r", stdin);
    /* Matrix a(0);
     GraphConverter gc;
     GraphBuilder graphBuilder;
@@ -40,6 +40,15 @@ int main()
     {
         cout << vec[i] << " ";
     }*/
+
+    /*GraphBuilder graphBuilder;
+    GraphAdjList graph = graphBuilder.buildGraphAdjList();
+    Tree t = graph.DFSIterative(1);
+    t.print(cout);
+    Tree t1 = graph.DFS(1,0);
+    t1.print(cout);
+    graph.DFSStackTime(1);*/
+
 
     ///1 domashno konvertirane
     /*GraphEdgeList ge;

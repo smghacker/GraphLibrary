@@ -11,6 +11,7 @@ private:
     int sz;
     bool directed;
     bool multi;
+    void DFSInner(int vertex, int parent, vector<int>& usedDFS, Tree& spanningTreeDFS);
 public:
     GraphAdjList();
     GraphAdjList(vector<vector<int> >& graph, bool directed, bool multi);
@@ -24,5 +25,8 @@ public:
     bool isThereEulerLoop();
     bool isThereEulerPath();
     vector<int> findEulerLoop();
+    Tree DFSIterative(int vertex);
+    Tree DFS(int vertex, int parent);
+    void DFSStackTime(int vertex);
 };
 #endif // GRAPHADJLIST_H

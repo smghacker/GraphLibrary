@@ -241,3 +241,111 @@ vector<int> GraphAdjList::findEulerLoop()
     reverse(res.begin(), res.end());
     return res;
 }
+
+Tree GraphAdjList::DFSIterative(int vertex)
+{
+    Tree spanningTree(sz-1);
+    int used[sz];
+    int next[sz];
+    for(int i = 0; i < sz; i++)
+    {
+        used[i] = 0;
+        next[i] = 0;
+    }
+    stack<int> vert;
+    vert.push(vertex);
+    used[vertex] = 1;
+    spanningTree.assignParent(vertex, 0);
+    while(!vert.empty())
+    {
+        int curr = vert.top();
+        if(next[curr] < graph[curr].size())
+        {
+            int v = graph[curr][next[curr]];
+            next[curr]++;
+            if(!used[v])
+            {
+                vert.push(v);
+                used[v] = 1;
+                spanningTree.assignParent(v, curr);
+            }
+        }
+        else
+        {
+            vert.pop();
+        }
+    }
+    return spanningTree;
+}
+
+void GraphAdjList::DFSInner(int vertex, int parent, vector<int>& used, Tree& spanningTree)
+{
+    spanningTree.assignParent(vertex, parent);
+    used[vertex] = 1;
+    for(int i = 0; i < graph[vertex].size(); i++)
+    {
+        int next = graph[vertex][i];
+        if(!used[next])
+        {
+            DFSInner(next, vertex, used, spanningTree);
+        }
+    }
+}
+
+Tree GraphAdjList::DFS(int vertex, int parent)
+{
+    vector<int> used;
+    used.assign(sz,0);
+    Tree spanningTree(sz-1);
+    DFSInner(vertex, parent, used, spanningTree);
+    return spanningTree;
+}
+
+void GraphAdjList::DFSStackTime(int vertex)
+{
+    vector<int> addStack;
+    vector<int> deleteStack;
+    int used[sz];
+    int next[sz];
+    for(int i = 0; i < sz; i++)
+    {
+        used[i] = 0;
+        next[i] = 0;
+    }
+    stack<int> vert;
+    vert.push(vertex);
+    addStack.push_back(vertex);
+    used[vertex] = 1;
+    while(!vert.empty())
+    {
+        int curr = vert.top();
+        if(next[curr] < graph[curr].size())
+        {
+            int v = graph[curr][next[curr]];
+            next[curr]++;
+            if(!used[v])
+            {
+                vert.push(v);
+                addStack.push_back(v);
+                used[v] = 1;
+            }
+        }
+        else
+        {
+            vert.pop();
+            deleteStack.push_back(curr);
+        }
+    }
+    cout << "The elements enter the stack in this order:" << endl;
+    for(int i = 0; i < addStack.size(); i++)
+    {
+        cout << addStack[i] << " ";
+    }
+    cout << endl;
+    cout << "The elements exit the stack in this order:" << endl;
+    for(int i = 0; i < addStack.size(); i++)
+    {
+        cout << deleteStack[i] << " ";
+    }
+    cout << endl;
+}
