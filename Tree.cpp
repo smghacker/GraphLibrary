@@ -100,7 +100,7 @@ void Tree::print(ostream& out)
 {
     for(int i = 1; i <= sz; i++)
     {
-        out << i << " " << treeParentList[i] << endl;
+        out << "p(" << i << ") = " << treeParentList[i] << endl;
     }
     out << endl;
 }
