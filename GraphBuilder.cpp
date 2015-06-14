@@ -1,27 +1,27 @@
 #include "GraphBuilder.h"
 
 
-GraphAdjList GraphBuilder::buildGraphAdjList()
+GraphAdjList GraphBuilder::buildGraphAdjList(istream& in, ostream& out)
 {
     int numOfVertices;
-    cout << "Type number of vertices" << endl;
-    cin >> numOfVertices;
+    out << "Type number of vertices" << endl;
+    in >> numOfVertices;
     bool isDirected;
-    cout << "Type 1 if it is directed and 0 if it is not" << endl;
-    cin >> isDirected;
+    out << "Type 1 if it is directed and 0 if it is not" << endl;
+    in >> isDirected;
     bool isMulti;
-    cout << "Type 1 if the graph is multigraph and 0 if it is not" << endl;
-    cin >> isMulti;
+    out << "Type 1 if the graph is multigraph and 0 if it is not" << endl;
+    in >> isMulti;
 
     int numOfEdges;
-    cout << "Type the number of edges and then type the edges " << endl;
-    cin >> numOfEdges;
+    out << "Type the number of edges and then type the edges " << endl;
+    in >> numOfEdges;
 
     vector<vector<int> > graph(numOfVertices+1);
     for(int i = 0; i < numOfEdges; i++)
     {
         int from,to;
-        cin >> from >> to;
+        in >> from >> to;
         graph[from].push_back(to);
         if(!isDirected)
         {
@@ -32,26 +32,26 @@ GraphAdjList GraphBuilder::buildGraphAdjList()
     return GraphAdjList(graph, isDirected, isMulti);
 }
 
-GraphEdgeList GraphBuilder::buildGraphEdgeList()
+GraphEdgeList GraphBuilder::buildGraphEdgeList(istream& in, ostream& out)
 {
     int numOfVertices;
-    cout << "Type number of vertices" << endl;
-    cin >> numOfVertices;
+    out << "Type number of vertices" << endl;
+    in >> numOfVertices;
     bool isDirected;
-    cout << "Type 1 if it is directed and 0 if it is not" << endl;
-    cin >> isDirected;
+    out << "Type 1 if it is directed and 0 if it is not" << endl;
+    in >> isDirected;
     bool isMulti;
-    cout << "Type 1 if the graph is multigraph and 0 if it is not" << endl;
-    cin >> isMulti;
+    out << "Type 1 if the graph is multigraph and 0 if it is not" << endl;
+    in >> isMulti;
 
     int numOfEdges;
-    cout << "Type the number of edges and then type the edges" << endl;
-    cin >> numOfEdges;
+    out << "Type the number of edges and then type the edges" << endl;
+    in >> numOfEdges;
 
     vector<Edge> graph;
     for(int i = 0; i < numOfEdges; i++){
         int from,to;
-        cin >> from >> to;
+        in >> from >> to;
         Edge edge(from, to);
         if(!isDirected){
             Edge edge1(to,from);
@@ -63,17 +63,17 @@ GraphEdgeList GraphBuilder::buildGraphEdgeList()
     return GraphEdgeList(graph, isDirected, isMulti);
 }
 
-GraphEdgeList GraphBuilder::buildDirectedMultiGraphEdgeList()
+GraphEdgeList GraphBuilder::buildDirectedMultiGraphEdgeList(istream& in)
 {
     int numOfVertices;
-    cin >> numOfVertices;
+    in >> numOfVertices;
     int numOfEdges;
-    cin >> numOfEdges;
+    in >> numOfEdges;
 
     vector<Edge> graph;
     for(int i = 0; i < numOfEdges; i++){
         int from,to;
-        cin >> from >> to;
+        in >> from >> to;
         Edge edge(from, to);
         graph.push_back(edge);
     }

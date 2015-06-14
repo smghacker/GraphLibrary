@@ -33,11 +33,11 @@ void GraphEdgeList::addEdge(Edge e)
     this->listOfEdges.push_back(e);
 }
 
-void GraphEdgeList::print()const
+void GraphEdgeList::print(ostream& out)const
 {
     for(int i = 0; i < listOfEdges.size(); i++)
     {
-        cout << listOfEdges[i].getBegin() << " " << listOfEdges[i].getEnd() << endl;
+        out << listOfEdges[i].getBegin() << " " << listOfEdges[i].getEnd() << endl;
     }
 }
 

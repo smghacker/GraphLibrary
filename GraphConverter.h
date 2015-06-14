@@ -3,6 +3,8 @@
 #include "GraphAdjList.h"
 #include "GraphEdgeList.h"
 #include "GraphAdjMat.h"
+using namespace std;
+
 class GraphConverter{
 public:
     GraphAdjList fromEdgeListToAdjList(GraphEdgeList& graphEdgeList);

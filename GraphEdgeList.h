@@ -17,6 +17,6 @@ public:
     bool isMulti()const;
     vector<Edge> getEdges()const;
     void addEdge(Edge e);
-    void print()const;
+    void print(ostream& out)const;
 };
 #endif

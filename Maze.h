@@ -3,7 +3,6 @@
 #include<iostream>
 #include<vector>
 #include "GridGraphAdjList.h"
-
 using namespace std;
 
 class Maze{

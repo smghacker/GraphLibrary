@@ -7,15 +7,15 @@ GridGraphAdjList::GridGraphAdjList(int row, int col, bool directed)
     this->directed = directed;
 }
 
-void GridGraphAdjList::print()
+void GridGraphAdjList::print(ostream& out)
 {
     for(int i = 0; i < (row+2)*(col+2) ; i++)
     {
         for(int j = 0; j < MAXD; j++)
         {
-            cout << adjList[i][j] << " ";
+            out << adjList[i][j] << " ";
         }
-        cout << endl;
+        out << endl;
     }
 }
 
@@ -40,11 +40,11 @@ void GridGraphAdjList::addEdge(int from, int to)
     adjList[to][adj] = from;
 }
 
-vector<vector<int> > GridGraphAdjList::readTable(istream& in)
+vector<vector<int> > GridGraphAdjList::readTable(istream& in, ostream& out)
 {
     vector<vector<int> > matr;
     matr.resize(row+2, vector<int>(col+2));
-    cout << "Input the table: " << endl;
+    out << "Input the table: " << endl;
     for(int i = 1; i <= row; i++)
     {
         for(int j = 1; j <= col; j++)
@@ -65,9 +65,9 @@ vector<vector<int> > GridGraphAdjList::readTable(istream& in)
     return matr;
 }
 
-void GridGraphAdjList::makeGraph(istream& in)
+void GridGraphAdjList::makeGraph(istream& in, ostream& out)
 {
-    vector<vector<int> > maze = readTable(in);
+    vector<vector<int> > maze = readTable(in, out);
     const int lim = row*(col+2)+col+2;
     int used[lim];
     for(int i = 0; i < lim; i++)

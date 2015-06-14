@@ -15,7 +15,7 @@ private:
 public:
     GraphAdjList();
     GraphAdjList(vector<vector<int> >& graph, bool directed, bool multi);
-    void print();
+    void print(ostream& out);
     vector<vector<int> > getGraph()const;
     bool isDirected()const;
     bool isMulti()const;
@@ -27,6 +27,6 @@ public:
     vector<int> findEulerLoop();
     Tree DFSIterative(int vertex);
     Tree DFS(int vertex, int parent);
-    void DFSStackTime(int vertex);
+    void DFSStackTime(int vertex, ostream& out);
 };
 #endif // GRAPHADJLIST_H
