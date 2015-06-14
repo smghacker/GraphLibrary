@@ -1,6 +1,5 @@
 #include "Tree.h"
 #include <vector>
-
 using namespace std;
 
 Tree::Tree(int sz)
@@ -21,10 +20,11 @@ void Tree::build(istream& in)
     }
 }
 
-int Tree::getRoot()
+int Tree::getRoot()const
 {
     return this->root;
 }
+
 void Tree::add(int vertex)
 {
     treeParentList.push_back(vertex);
@@ -36,7 +36,7 @@ void Tree::assignParent(int vertex, int parent)
     treeParentList[vertex] = parent;
 }
 
-bool Tree::isLeaf(int vertex)
+bool Tree::isLeaf(int vertex)const
 {
     for(int i = 1; i <= sz; i++)
     {
@@ -63,7 +63,7 @@ bool Tree::deleteIfLeaf(int vertex)
     return false;
 }
 
-void Tree::slowGetLeaves(ostream& out)
+void Tree::printLeavesSlow(ostream& out)const
 {
     for(int i = 1; i <= sz; i++)
     {
@@ -75,7 +75,7 @@ void Tree::slowGetLeaves(ostream& out)
     out << endl;
 }
 
-void Tree::getLeaves(ostream& out)
+void Tree::printLeaves(ostream& out)const
 {
     int vertexes[sz+1];
     for(int i = 1; i <= sz; i++)
@@ -96,7 +96,7 @@ void Tree::getLeaves(ostream& out)
     out << endl;
 }
 
-void Tree::print(ostream& out)
+void Tree::print(ostream& out)const
 {
     for(int i = 1; i <= sz; i++)
     {

@@ -7,51 +7,8 @@ using namespace std;
 
 int main()
 {
-    freopen("C:\\Users\\Sonia\\Desktop\\in.txt", "r", stdin);
-   /* Matrix a(0);
-    GraphConverter gc;
-    GraphBuilder graphBuilder;
-
-    GraphAdjList g = graphBuilder.buildGraphAdjList();
-    g.print();
-    Tree t = g.BFSSpanningTree(1);
-    t.print(cout);*/
-
-    /*Maze maze(4,4);
-    maze.read(cin);
-    if(maze.isWay(7,28))
-    {
-        cout << "Yes" << endl;
-    }
-    else
-    {
-        cout << "No" << endl;
-    }*/
-
-
-    /*GridGraphAdjList graph(2,2,0);
-    graph.makeGraph(cin);
-    graph.print();*/
-
-    /*GraphBuilder graphBuilder;
-    GraphAdjList graph = graphBuilder.buildGraphAdjList();
-    vector<int> vec = graph.findEulerLoop();
-    for(int i = 0; i < vec.size(); i++)
-    {
-        cout << vec[i] << " ";
-    }*/
-
-    /*GraphBuilder graphBuilder;
-    GraphAdjList graph = graphBuilder.buildGraphAdjList();
-    Tree t = graph.DFSIterative(1);
-    t.print(cout);
-    Tree t1 = graph.DFS(1,0);
-    t1.print(cout);
-    graph.DFSStackTime(1);*/
-
-
-    ///1 domashno konvertirane
-    /*GraphEdgeList ge;
+   /* GraphConverter gc;
+    GraphEdgeList ge;
     Edge a1(1,2);
     Edge a2(2,3);
     Edge a3(1,3);
@@ -63,29 +20,30 @@ int main()
     GraphAdjList a = gc.fromEdgeListToAdjList(ge);
     GraphEdgeList b = gc.fromAdjListToEdgeList(a);
 
-    a.print();
-    b.print();
+    a.print(cout);
+    b.print(cout);
 
     //Demonstrating building the graph
     GraphBuilder gb;
-    GraphAdjList gcc = gb.buildGraphAdjList();
-    gcc.print();
-    GraphEdgeList gbb = gb.buildGraphEdgeList();
-    gbb.print();*/
+    GraphAdjList gcc = gb.buildGraphAdjList(cin, cout);
+    gcc.print(cout);
+    GraphEdgeList gbb = gb.buildGraphEdgeList(cin, cout);
+    gbb.print(cout);*/
 
-    ///2 domashno zada4a 1
-
-    /*GraphEdgeList graph = graphBuilder.buildDirectedMultiGraphEdgeList();
+    /*GraphBuilder graphBuilder;
+    GraphEdgeList graph = graphBuilder.buildDirectedMultiGraphEdgeList(cin, cout);
     int length, u,v;
     cin >> u >> v >> length;
+    GraphConverter gc;
     GraphAdjMat graphAdjMat = gc.fromEdgeListToAdjMat(graph);
-    cout << graphAdjMat.howManyPathsAreThereWithACertainLengthBetweenTwoVertices(length, u, v);*/
+    cout << graphAdjMat.numPathsWithXLengthBetweenTwoVertices(length, u, v);*/
 
 
-    ///2 domashno zada4a 2
-    /*GraphEdgeList graph2 = graphBuilder.buildDirectedMultiGraphEdgeList();
+    /*GraphBuilder graphBuilder;
+    GraphEdgeList graph2 = graphBuilder.buildDirectedMultiGraphEdgeList(cin, cout);
     int u2,v2;
     cin >> u2 >> v2;
+    GraphConverter gc;
     GraphAdjMat graphAdjMat2 = gc.fromEdgeListToAdjMat(graph2);
     if(graphAdjMat2.isThereAPathBetweenTwoVertices(u2,v2)){
         cout << "Yes" << endl;
@@ -98,5 +56,46 @@ int main()
     }else{
         cout << "No" << endl;
     }*/
+
+    /*Matrix a(0);
+    GraphConverter gc;
+    GraphBuilder graphBuilder;
+    GraphAdjList g = graphBuilder.buildGraphAdjList(cin, cout);
+    g.print(cout);
+    Tree t = g.BFSSpanningTree(1);
+    t.print(cout);*/
+
+    /*Maze maze(4,4);
+    maze.read(cin);
+    if(maze.isThereWay(7,28))
+    {
+        cout << "Yes" << endl;
+    }
+    else
+    {
+        cout << "No" << endl;
+    }*/
+
+
+    /*GridGraphAdjList graph(2,2,0);
+    graph.makeGraph(cin, cout);
+    graph.print(cout);*/
+
+    /*GraphBuilder graphBuilder;
+    GraphAdjList graph = graphBuilder.buildGraphAdjList(cin, cout);
+    vector<int> vec = graph.findEulerLoop();
+    for(int i = 0; i < vec.size(); i++)
+    {
+        cout << vec[i] << " ";
+    }*/
+
+    /*GraphBuilder graphBuilder;
+    GraphAdjList graph = graphBuilder.buildGraphAdjList(cin, cout);
+    Tree t = graph.DFSIterative(1);
+    t.print(cout);
+    Tree t1 = graph.DFS(1,0);
+    t1.print(cout);
+    graph.DFSStackTime(1, cout);*/
+
     return 0;
 }

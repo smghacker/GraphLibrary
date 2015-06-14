@@ -4,7 +4,8 @@
 #include<vector>
 using namespace std;
 
-class Tree{
+class Tree
+{
 private:
     vector<int> treeParentList;
     int sz;
@@ -12,14 +13,14 @@ private:
 public:
     Tree(int sz);
     void build(istream& in);
-    int getRoot();
+    int getRoot()const;
     void add(int vertex);
     void assignParent(int vertex, int parent);
-    bool isLeaf(int vertex);
+    bool isLeaf(int vertex)const;
     bool deleteIfLeaf(int vertex);
-    void slowGetLeaves(ostream& out);
-    void getLeaves(ostream& out);
-    void print(ostream& out);
+    void printLeavesSlow(ostream& out)const;
+    void printLeaves(ostream& out)const;
+    void print(ostream& out)const;
 };
 
 #endif

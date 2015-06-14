@@ -5,7 +5,8 @@
 #include "GridGraphAdjList.h"
 using namespace std;
 
-class Maze{
+class Maze
+{
 private:
     vector<vector<int> > maze;
     int row;
@@ -13,7 +14,7 @@ private:
 public:
     Maze(int r, int c);
     void read(istream& in);
-    bool isWay(int from, int to);
+    bool isThereWay(int from, int to)const;
 };
 
 #endif

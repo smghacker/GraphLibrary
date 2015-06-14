@@ -16,7 +16,7 @@ int Matrix::get(int x, int y)const
     return mat[x][y];
 }
 
-Matrix Matrix::matrixMultiplication(Matrix& b)
+Matrix Matrix::matrixMultiplication(Matrix& b)const
 {
     vector<vector<int> > ans;
     ans.resize(sz);
@@ -38,7 +38,7 @@ Matrix Matrix::matrixMultiplication(Matrix& b)
     return result;
 }
 
-vector<vector<int> > Matrix::matrixMultiplication(vector<vector<int> > mat, vector<vector<int> > b)
+vector<vector<int> > Matrix::matrixMultiplication(vector<vector<int> > mat, vector<vector<int> > b)const
 {
     vector<vector<int> > ans;
     ans.resize(sz);
@@ -59,7 +59,7 @@ vector<vector<int> > Matrix::matrixMultiplication(vector<vector<int> > mat, vect
     return ans;
 }
 
-Matrix Matrix::fastMultiplication(int power)
+Matrix Matrix::fastMultiplication(int power)const
 {
     vector<vector<int> > ans;
     ans.resize(sz);

@@ -18,7 +18,7 @@ GraphAdjList::GraphAdjList(vector<vector<int> >& graph, bool directed, bool mult
     this->multi = multi;
 }
 
-void GraphAdjList::print(ostream& out)
+void GraphAdjList::print(ostream& out)const
 {
     for(int i = 0; i < sz; i++)
     {
@@ -46,7 +46,7 @@ bool GraphAdjList::isMulti()const
     return multi;
 }
 
-Tree GraphAdjList::BFSSpanningTree(int vertex)
+Tree GraphAdjList::BFSSpanningTree(int vertex)const
 {
     Tree spanningTree(sz-1);
     int used[sz];
@@ -75,22 +75,22 @@ Tree GraphAdjList::BFSSpanningTree(int vertex)
     return spanningTree;
 }
 
-vector<int> GraphAdjList::parents()
+vector<int> GraphAdjList::parents()const
 {
-    vector<int> par;
-    par.assign(sz,0);
+    vector<int> parentList;
+    parentList.assign(sz,0);
     for(int i = 1; i < sz; i++)
     {
         for(int j = 0; j < graph[i].size(); j++)
         {
             int to = graph[i][j];
-            par[to]++;
+            parentList[to]++;
         }
     }
-    return par;
+    return parentList;
 }
 
-bool GraphAdjList::isConnected()
+bool GraphAdjList::isConnected()const
 {
     int used[sz];
     for(int i = 0; i < sz; i++)
@@ -123,7 +123,7 @@ bool GraphAdjList::isConnected()
     return true;
 }
 
-bool GraphAdjList::isThereEulerLoop()
+bool GraphAdjList::isThereEulerLoop()const
 {
     if(!isConnected())
     {
@@ -131,10 +131,10 @@ bool GraphAdjList::isThereEulerLoop()
     }
     if(isDirected())
     {
-        vector<int> par = parents();
-        for(int i = 1; i < par.size(); i++)
+        vector<int> parentList = parents();
+        for(int i = 1; i < parentList.size(); i++)
         {
-            if(graph[i].size() != par[i])
+            if(graph[i].size() != parentList[i])
             {
                 return false;
             }
@@ -155,7 +155,7 @@ bool GraphAdjList::isThereEulerLoop()
     return true;
 }
 
-bool GraphAdjList::isThereEulerPath()
+bool GraphAdjList::isThereEulerPath()const
 {
     if(!isConnected())
     {
@@ -163,19 +163,22 @@ bool GraphAdjList::isThereEulerPath()
     }
     if(isDirected())
     {
-        vector<int> par = parents();
+        vector<int> parentList = parents();
         int cnt = 0;
         int bigger = 0;
         int smaller = 0;
-        for(int i = 1; i < par.size(); i++)
+        for(int i = 1; i < parentList.size(); i++)
         {
-            if(graph[i].size() > par[i])
+            if(graph[i].size() == parentList[i] - 1)
             {
                 bigger++;
             }
-            else if(graph[i].size() < par[i])
+            else if(graph[i].size() == parentList[i] + 1)
             {
                 smaller++;
+            }
+            else if(graph[i].size() != parentList[i]){
+                return false;
             }
         }
         if((bigger == smaller && bigger == 1) || isThereEulerLoop())
@@ -202,9 +205,10 @@ bool GraphAdjList::isThereEulerPath()
     }
 }
 
-vector<int> GraphAdjList::findEulerLoop()
+vector<int> GraphAdjList::findEulerLoop()const
 {
     vector<int> res;
+    vector<vector<int> > graphCopy(graph);
     if(!isThereEulerLoop())
     {
         return res;
@@ -219,19 +223,19 @@ vector<int> GraphAdjList::findEulerLoop()
     while(!vert.empty())
     {
         int curr = vert.top();
-        if(nextEdge[curr] < graph[curr].size())
+        if(nextEdge[curr] < graphCopy[curr].size())
         {
-            int next = graph[curr][nextEdge[curr]];
+            int next = graphCopy[curr][nextEdge[curr]];
             vert.push(next);
             nextEdge[curr]++;
             if(!isDirected())
             {
-                vector<int>::iterator it = graph[next].begin();
+                vector<int>::iterator it = graphCopy[next].begin();
                 while(*it != curr)
                 {
                     it++;
                 }
-                graph[next].erase(it);
+                graphCopy[next].erase(it);
             }
         }
         else
@@ -244,8 +248,10 @@ vector<int> GraphAdjList::findEulerLoop()
     return res;
 }
 
-Tree GraphAdjList::DFSIterative(int vertex)
+Tree GraphAdjList::DFSIterative(int vertex)const
 {
+    //the real size of the graph is sz - 1
+    //because the indexing starts from 1
     Tree spanningTree(sz-1);
     int used[sz];
     int next[sz];
@@ -280,7 +286,7 @@ Tree GraphAdjList::DFSIterative(int vertex)
     return spanningTree;
 }
 
-void GraphAdjList::DFSInner(int vertex, int parent, vector<int>& used, Tree& spanningTree)
+void GraphAdjList::DFSInner(int vertex, int parent, vector<int>& used, Tree& spanningTree)const
 {
     spanningTree.assignParent(vertex, parent);
     used[vertex] = 1;
@@ -294,7 +300,7 @@ void GraphAdjList::DFSInner(int vertex, int parent, vector<int>& used, Tree& spa
     }
 }
 
-Tree GraphAdjList::DFS(int vertex, int parent)
+Tree GraphAdjList::DFS(int vertex, int parent)const
 {
     vector<int> used;
     used.assign(sz,0);
@@ -303,7 +309,7 @@ Tree GraphAdjList::DFS(int vertex, int parent)
     return spanningTree;
 }
 
-void GraphAdjList::DFSStackTime(int vertex, ostream& out)
+void GraphAdjList::DFSStackTime(int vertex, ostream& out)const
 {
     vector<int> addStack;
     vector<int> deleteStack;

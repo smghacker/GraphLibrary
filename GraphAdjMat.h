@@ -13,7 +13,7 @@ private:
     bool multi;
 public:
     GraphAdjMat(Matrix* graph, bool directed, bool multi, int sz);
-    int howManyPathsAreThereWithACertainLengthBetweenTwoVertices(long long length, int u, int v);
-    bool isThereAPathBetweenTwoVertices(int u, int v);
+    int numPathsWithXLengthBetweenTwoVertices(long long length, int u, int v)const;
+    bool isThereAPathBetweenTwoVertices(int u, int v)const;
 };
 #endif

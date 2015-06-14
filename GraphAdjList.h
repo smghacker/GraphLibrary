@@ -11,22 +11,24 @@ private:
     int sz;
     bool directed;
     bool multi;
-    void DFSInner(int vertex, int parent, vector<int>& usedDFS, Tree& spanningTreeDFS);
+    void DFSInner(int vertex, int parent, vector<int>& usedDFS, Tree& spanningTreeDFS)const;
 public:
     GraphAdjList();
     GraphAdjList(vector<vector<int> >& graph, bool directed, bool multi);
-    void print(ostream& out);
+
+    void print(ostream& out)const;
     vector<vector<int> > getGraph()const;
     bool isDirected()const;
     bool isMulti()const;
-    Tree BFSSpanningTree(int vertex);
-    vector<int> parents();
-    bool isConnected();
-    bool isThereEulerLoop();
-    bool isThereEulerPath();
-    vector<int> findEulerLoop();
-    Tree DFSIterative(int vertex);
-    Tree DFS(int vertex, int parent);
-    void DFSStackTime(int vertex, ostream& out);
+
+    Tree BFSSpanningTree(int vertex)const;
+    vector<int> parents()const;
+    bool isConnected()const;
+    bool isThereEulerLoop()const;
+    bool isThereEulerPath()const;
+    vector<int> findEulerLoop()const;
+    Tree DFSIterative(int vertex)const;
+    Tree DFS(int vertex, int parent)const;
+    void DFSStackTime(int vertex, ostream& out)const;
 };
 #endif // GRAPHADJLIST_H

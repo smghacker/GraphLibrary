@@ -5,7 +5,8 @@
 #include "Edge.h"
 using namespace std;
 
-class GraphEdgeList{
+class GraphEdgeList
+{
 private:
     vector<Edge> listOfEdges;
     bool directed;

@@ -4,10 +4,11 @@
 #include "GraphEdgeList.h"
 using namespace std;
 
-class GraphBuilder{
+class GraphBuilder
+{
 public:
     GraphAdjList buildGraphAdjList(istream& in, ostream& out);
     GraphEdgeList buildGraphEdgeList(istream& in, ostream& out);
-    GraphEdgeList buildDirectedMultiGraphEdgeList(istream& in);
+    GraphEdgeList buildDirectedMultiGraphEdgeList(istream& in, ostream& out);
 };
 #endif // GRAPHBUILDER_H

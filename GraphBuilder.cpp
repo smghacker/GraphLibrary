@@ -49,11 +49,13 @@ GraphEdgeList GraphBuilder::buildGraphEdgeList(istream& in, ostream& out)
     in >> numOfEdges;
 
     vector<Edge> graph;
-    for(int i = 0; i < numOfEdges; i++){
+    for(int i = 0; i < numOfEdges; i++)
+    {
         int from,to;
         in >> from >> to;
         Edge edge(from, to);
-        if(!isDirected){
+        if(!isDirected)
+        {
             Edge edge1(to,from);
             graph.push_back(edge1);
         }
@@ -63,15 +65,18 @@ GraphEdgeList GraphBuilder::buildGraphEdgeList(istream& in, ostream& out)
     return GraphEdgeList(graph, isDirected, isMulti);
 }
 
-GraphEdgeList GraphBuilder::buildDirectedMultiGraphEdgeList(istream& in)
+GraphEdgeList GraphBuilder::buildDirectedMultiGraphEdgeList(istream& in, ostream& out)
 {
     int numOfVertices;
+    out << "Type number of vertices" << endl;
     in >> numOfVertices;
     int numOfEdges;
+    out << "Type the number of edges and then type the edges" << endl;
     in >> numOfEdges;
 
     vector<Edge> graph;
-    for(int i = 0; i < numOfEdges; i++){
+    for(int i = 0; i < numOfEdges; i++)
+    {
         int from,to;
         in >> from >> to;
         Edge edge(from, to);

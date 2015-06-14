@@ -32,7 +32,7 @@ void Maze::read(istream& in)
     }
 }
 
-bool Maze::isWay(int from, int to)
+bool Maze::isThereWay(int from, int to)const
 {
     int n = (row+2)*(col+2);
     int used[n];

@@ -10,6 +10,7 @@ private:
 public:
     Edge(int begin, int end);
     Edge(int begin, int end, int weight);
+
     int getBegin()const;
     int getEnd()const;
     int getWeight()const;

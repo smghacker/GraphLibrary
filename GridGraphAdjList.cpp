@@ -7,7 +7,7 @@ GridGraphAdjList::GridGraphAdjList(int row, int col, bool directed)
     this->directed = directed;
 }
 
-void GridGraphAdjList::print(ostream& out)
+void GridGraphAdjList::print(ostream& out)const
 {
     for(int i = 0; i < (row+2)*(col+2) ; i++)
     {

@@ -16,7 +16,7 @@ private:
 public:
     GridGraphAdjList();
     GridGraphAdjList(int row, int col, bool directed);
-    void print(ostream& out);
+    void print(ostream& out)const;
     vector<vector<int> > getGraph()const;
     bool isDirected()const;
     void addEdge(int from, int to);
