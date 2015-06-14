@@ -15,6 +15,7 @@ int Matrix::get(int x, int y)const
 {
     return mat[x][y];
 }
+
 Matrix Matrix::matrixMultiplication(Matrix& b)
 {
     vector<vector<int> > ans;
@@ -57,6 +58,7 @@ vector<vector<int> > Matrix::matrixMultiplication(vector<vector<int> > mat, vect
     }
     return ans;
 }
+
 Matrix Matrix::fastMultiplication(int power)
 {
     vector<vector<int> > ans;

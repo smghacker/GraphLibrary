@@ -1,5 +1,4 @@
 #include "GraphAdjList.h"
-#include <cstring>
 #include <queue>
 #include <stack>
 #include <algorithm>
@@ -19,16 +18,16 @@ GraphAdjList::GraphAdjList(vector<vector<int> >& graph, bool directed, bool mult
     this->multi = multi;
 }
 
-void GraphAdjList::print()
+void GraphAdjList::print(ostream& out)
 {
     for(int i = 0; i < sz; i++)
     {
-        cout << i <<  " :";
+        out << i <<  " :";
         for(int j = 0; j < graph[i].size(); j++)
         {
-            cout << " " << graph[i][j];
+            out << " " << graph[i][j];
         }
-        cout << endl;
+        out << endl;
     }
 }
 
@@ -51,7 +50,10 @@ Tree GraphAdjList::BFSSpanningTree(int vertex)
 {
     Tree spanningTree(sz-1);
     int used[sz];
-    memset(used, 0, sizeof(used));
+    for(int i = 0; i < sz; i++)
+    {
+        used[i] = 0;
+    }
     used[vertex] = 1;
     queue<int> q;
     q.push(vertex);
@@ -301,7 +303,7 @@ Tree GraphAdjList::DFS(int vertex, int parent)
     return spanningTree;
 }
 
-void GraphAdjList::DFSStackTime(int vertex)
+void GraphAdjList::DFSStackTime(int vertex, ostream& out)
 {
     vector<int> addStack;
     vector<int> deleteStack;
@@ -336,16 +338,16 @@ void GraphAdjList::DFSStackTime(int vertex)
             deleteStack.push_back(curr);
         }
     }
-    cout << "The elements enter the stack in this order:" << endl;
+    out << "The elements enter the stack in this order:" << endl;
     for(int i = 0; i < addStack.size(); i++)
     {
-        cout << addStack[i] << " ";
+        out << addStack[i] << " ";
     }
-    cout << endl;
-    cout << "The elements exit the stack in this order:" << endl;
+    out << endl;
+    out << "The elements exit the stack in this order:" << endl;
     for(int i = 0; i < addStack.size(); i++)
     {
-        cout << deleteStack[i] << " ";
+        out << deleteStack[i] << " ";
     }
-    cout << endl;
+    out << endl;
 }
